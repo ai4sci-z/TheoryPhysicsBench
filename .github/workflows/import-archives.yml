@@ -1,1 +1,14 @@
-
+name: Verify source archive
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Restore source files
+        run: python3 restore_source.py --destination restored-source
+      - name: Check public source files
+        run: python3 scan_public.py restored-source
