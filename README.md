@@ -12,6 +12,8 @@
 | [单题原型](https://github.com/ai4sci-z/TheoryPhysicsBench/releases/download/archive-2026-11-27/TheoryPhysicsBench-prototypes.zip) | Allen–Dynes 与力学反问题原型 |
 | [运行环境](https://github.com/ai4sci-z/TheoryPhysicsBench/releases/download/archive-2026-11-27/TheoryPhysicsBench-infrastructure.zip) | Dockerfile、版本记录、构建与恢复脚本 |
 
+[完整项目存档](https://github.com/ai4sci-z/TheoryPhysicsBench/releases/download/archive-2026-11-27/all-source.tar.xz)包含以上各版本的源码、来源材料和运行记录。
+
 全部文件见 [Releases](https://github.com/ai4sci-z/TheoryPhysicsBench/releases/tag/archive-2026-11-27)。
 
 ## 50题版本
@@ -48,3 +50,13 @@ v2保留了较大规模的设计与制作尝试，包括形式化证明、开放
 ## 使用
 
 先下载50题包查看 `benchmark.json` 与逐题题面。`solution/`、`tests/` 用于出题与验收，不应挂载到被测智能体的作答环境。已有程序和文献来源按各自文件中的原始说明保留。
+
+## 源码归档恢复
+
+仓库根目录还保留了轻量源码归档的分卷。克隆仓库后运行：
+
+```sh
+python3 restore_source.py
+```
+
+脚本按 `source-core.json` 校验并解包至 `restored-source/TheoryPhysicsBench/`。轻量归档省略了大体积来源材料、完整运行日志和标准依赖；需要完整文件时下载上面的项目存档。
